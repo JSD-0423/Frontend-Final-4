@@ -9,8 +9,9 @@ import '@fontsource/inter/600.css';
 import '@fontsource/inter/700.css';
 import '@fontsource/inter/800.css';
 import '@fontsource/inter/900.css';
+import { color } from '@mui/system';
 
-export const Theme = createTheme({
+export const theme = createTheme({
   status: {
     danger: orange[500]
   },
@@ -21,5 +22,8 @@ export const Theme = createTheme({
     secondary: {
       main: green[500]
     }
+  },
+  typography: {
+    h1: { fontFamily: 'Inter', fontSize: 34, fontWeight: 600, color: ' #13101E' }
   }
 });
