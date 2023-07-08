@@ -7,12 +7,8 @@ import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
-import Badge from '@mui/material/Badge';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
-import AccountCircle from '@mui/icons-material/AccountCircle';
-import MailIcon from '@mui/icons-material/Mail';
-import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import { Button } from '@mui/material';
 
@@ -21,7 +17,7 @@ import {
   Search as SearchIcon,
   FavoriteBorder,
   PermIdentity,
-  WorkOutline,
+  WorkOutline
 } from '@mui/icons-material';
 
 const pages = ['Handbags', 'Watches', 'Skincare', 'Jewellery', 'Apparels'];
@@ -31,15 +27,15 @@ const Search = styled('div')(({ theme }) => ({
   borderRadius: theme.shape.borderRadius,
   backgroundColor: alpha(theme.palette.common.white, 0.15),
   '&:hover': {
-    backgroundColor: alpha(theme.palette.common.white, 0.25),
+    backgroundColor: alpha(theme.palette.common.white, 0.25)
   },
   marginRight: theme.spacing(2),
   marginLeft: 0,
   width: '100%',
   [theme.breakpoints.up('sm')]: {
     marginLeft: theme.spacing(3),
-    width: 'auto',
-  },
+    width: 'auto'
+  }
 }));
 
 const SearchIconWrapper = styled('div')(({ theme }) => ({
@@ -51,7 +47,7 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
   alignItems: 'center',
   justifyContent: 'center',
   color: 'black',
-  zIndex: '1',
+  zIndex: '1'
 }));
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
@@ -65,17 +61,15 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     transition: theme.transitions.create('width'),
     width: '100%',
     [theme.breakpoints.up('md')]: {
-      width: '20ch',
-    },
-  },
+      width: '20ch'
+    }
+  }
 }));
 
 function Navbar() {
   const [anchorEl, setAnchorEl] = useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
   const [anchorElNav, setAnchorElNav] = useState(null);
-
-  console.log(anchorEl);
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
@@ -111,17 +105,16 @@ function Navbar() {
       anchorEl={anchorEl}
       anchorOrigin={{
         vertical: 'top',
-        horizontal: 'right',
+        horizontal: 'right'
       }}
       id={menuId}
       keepMounted
       transformOrigin={{
         vertical: 'top',
-        horizontal: 'right',
+        horizontal: 'right'
       }}
       open={isMenuOpen}
-      onClose={handleMenuClose}
-    >
+      onClose={handleMenuClose}>
       <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
       <MenuItem onClick={handleMenuClose}>My account</MenuItem>
     </Menu>
@@ -130,52 +123,43 @@ function Navbar() {
   const mobileMenuId = 'primary-search-account-menu-mobile';
   const renderMobileMenu = (
     <Menu
+      sx={{ padding: '0' }}
       anchorEl={mobileMoreAnchorEl}
       anchorOrigin={{
         vertical: 'top',
-        horizontal: 'right',
+        horizontal: 'right'
       }}
       id={mobileMenuId}
       keepMounted
       transformOrigin={{
         vertical: 'top',
-        horizontal: 'right',
+        horizontal: 'right'
       }}
       open={isMobileMenuOpen}
-      onClose={handleMobileMenuClose}
-    >
+      onClose={handleMobileMenuClose}>
       <MenuItem>
-        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="error">
-            <MailIcon />
-          </Badge>
+        <IconButton size="medium" aria-label="show 4 new mails" color="inherit">
+          <FavoriteBorder />
         </IconButton>
-        <p>Messages</p>
+        <p>Favorite</p>
       </MenuItem>
       <MenuItem>
-        <IconButton
-          size="large"
-          aria-label="show 17 new notifications"
-          color="inherit"
-        >
-          <Badge badgeContent={17} color="error">
-            <NotificationsIcon />
-          </Badge>
+        <IconButton size="medium" aria-label="show 17 new notifications" color="inherit">
+          <PermIdentity />
         </IconButton>
-        <p>Notifications</p>
+        <p>Lorem</p>
       </MenuItem>
       {/* <MenuItem onClick={handleProfileMenuOpen}> */}
       <MenuItem>
         <IconButton
-          size="large"
+          size="medium"
           aria-label="account of current user"
           aria-controls="primary-search-account-menu"
           aria-haspopup="true"
-          color="inherit"
-        >
-          <AccountCircle />
+          color="inherit">
+          <WorkOutline />
         </IconButton>
-        <p>Profile</p>
+        <p>Lorem</p>
       </MenuItem>
     </Menu>
   );
@@ -184,8 +168,7 @@ function Navbar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar
         position="static"
-        sx={{ bgcolor: 'var(--bg-white)', color: 'black', boxShadow: 'none' }}
-      >
+        sx={{ bgcolor: 'var(--bg-white)', color: 'black', boxShadow: 'none' }}>
         <Toolbar>
           <Typography
             variant="h6"
@@ -196,9 +179,8 @@ function Navbar() {
               fontWeight: 700,
               letterSpacing: '.05rem',
               color: 'var(--primary-color)',
-              textDecoration: 'none',
-            }}
-          >
+              textDecoration: 'none'
+            }}>
             CORA'L
           </Typography>
 
@@ -213,9 +195,8 @@ function Navbar() {
                   display: 'block',
                   textTransform: 'capitalize',
                   fontSize: '.9rem',
-                  paddingInline: '5px',
-                }}
-              >
+                  paddingInline: '5px'
+                }}>
                 {page}
               </Button>
             ))}
@@ -225,17 +206,15 @@ function Navbar() {
             sx={{
               flexGrow: 1,
               display: { xs: 'flex', md: 'none' },
-              alignItems: 'center',
-            }}
-          >
+              alignItems: 'center'
+            }}>
             <IconButton
               size="large"
               aria-label="account of current user"
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
-              color="inherit"
-            >
+              color="inherit">
               <MenuIcon />
             </IconButton>
             <Menu
@@ -243,19 +222,18 @@ function Navbar() {
               anchorEl={anchorElNav}
               anchorOrigin={{
                 vertical: 'bottom',
-                horizontal: 'left',
+                horizontal: 'left'
               }}
               keepMounted
               transformOrigin={{
                 vertical: 'top',
-                horizontal: 'left',
+                horizontal: 'left'
               }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
               sx={{
-                display: { xs: 'block', md: 'none' },
-              }}
-            >
+                display: { xs: 'block', md: 'none' }
+              }}>
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">{page}</Typography>
@@ -271,9 +249,8 @@ function Navbar() {
                 fontWeight: 700,
                 letterSpacing: '.05rem',
                 color: 'var(--primary-color)',
-                textDecoration: 'none',
-              }}
-            >
+                textDecoration: 'none'
+              }}>
               CORA'L
             </Typography>
           </Box>
@@ -286,36 +263,17 @@ function Navbar() {
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ 'aria-label': 'search' }}
-            />
+            <StyledInputBase placeholder="Search…" inputProps={{ 'aria-label': 'search' }} />
           </Search>
 
           <Box sx={{ display: { xs: 'none', sm: 'flex' } }}>
-            <IconButton
-              size="medium"
-              aria-label="show 4 new mails"
-              color="inherit"
-            >
+            <IconButton size="medium" color="inherit">
               <FavoriteBorder />
             </IconButton>
-            <IconButton
-              size="medium"
-              aria-label="show 17 new notifications"
-              color="inherit"
-            >
+            <IconButton size="medium" onClick={handleProfileMenuOpen} color="inherit">
               <PermIdentity />
             </IconButton>
-            <IconButton
-              edge="end"
-              size="medium"
-              aria-label="account of current user"
-              aria-controls="primary-search-account-menu"
-              aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
-              color="inherit"
-            >
+            <IconButton edge="end" size="medium" color="inherit">
               <WorkOutline />
             </IconButton>
           </Box>
@@ -327,8 +285,7 @@ function Navbar() {
               aria-controls={mobileMenuId}
               aria-haspopup="true"
               onClick={handleMobileMenuOpen}
-              color="inherit"
-            >
+              color="inherit">
               <MoreIcon />
             </IconButton>
           </Box>
