@@ -17,7 +17,7 @@ export const theme = createTheme({
   },
   palette: {
     primary: {
-      main: purple[500]
+      main: '#1B4B66'
     },
     secondary: {
       main: green[500]
