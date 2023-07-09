@@ -1,7 +1,12 @@
 import React from 'react';
+import { CustomCarousel } from '../../shared';
 
 function HomePage() {
-  return <div>HomePage</div>;
+  return (
+    <div>
+      <CustomCarousel />
+    </div>
+  );
 }
 
 export default HomePage;
