@@ -2,12 +2,7 @@ import * as React from 'react';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import {
-  CardsDetailsContainer,
-  CardsTextContainer,
-  CardsActionsContainer,
-  ProductItemCard
-} from './ProductCardStyle';
+import { CardsDetailsBox, CardsTextBox, CardsActions, ProductItemCard } from './ProductCardStyle';
 
 export default function ProductCard({ productName, ProductPrice, ProductSpecifications }) {
   return (
@@ -17,10 +12,10 @@ export default function ProductCard({ productName, ProductPrice, ProductSpecific
         height="194"
         image="../assets/images/pink-bag-small 2.png"
         alt="Paella dish"
-        sx={{ backgroundColor: 'gray', borderRadius: 2, marginBottom: '4px' }}
+        sx={{ backgroundColor: 'gray', borderRadius: '8px', marginBottom: '4px' }}
       />
-      <CardsDetailsContainer>
-        <CardsTextContainer>
+      <CardsDetailsBox>
+        <CardsTextBox>
           <Typography variant="body2" marginBottom={'5px'}>
             {productName}
           </Typography>
@@ -28,11 +23,11 @@ export default function ProductCard({ productName, ProductPrice, ProductSpecific
             {ProductSpecifications}
           </Typography>
           <Typography variant="body2">{ProductPrice}</Typography>
-        </CardsTextContainer>
-        <CardsActionsContainer>
+        </CardsTextBox>
+        <CardsActions>
           <FavoriteBorderIcon />
-        </CardsActionsContainer>
-      </CardsDetailsContainer>
+        </CardsActions>
+      </CardsDetailsBox>
     </ProductItemCard>
   );
 }

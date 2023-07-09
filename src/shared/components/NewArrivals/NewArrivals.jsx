@@ -18,9 +18,21 @@ function NewArrivals() {
           ProductSpecifications={'Blossom Pouch'}
           ProductPrice={'$39.49'}
         />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
+        <ProductCard
+          productName={'Grande'}
+          ProductSpecifications={'Blossom Pouch'}
+          ProductPrice={'$39.49'}
+        />
+        <ProductCard
+          productName={'Grande'}
+          ProductSpecifications={'Blossom Pouch'}
+          ProductPrice={'$39.49'}
+        />
+        <ProductCard
+          productName={'Grande'}
+          ProductSpecifications={'Blossom Pouch'}
+          ProductPrice={'$39.49'}
+        />
       </CardsBox>
     </NewArrivalBox>
   );

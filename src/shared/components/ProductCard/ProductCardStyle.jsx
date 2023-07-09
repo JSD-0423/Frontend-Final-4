@@ -7,16 +7,16 @@ export const ProductItemCard = styled(Card)(({ theme }) => ({
   boxShadow: 'none'
 }));
 
-export const CardsDetailsContainer = styled('div')(({ theme }) => ({
+export const CardsDetailsBox = styled('div')(({ theme }) => ({
   display: 'flex',
   justifyContent: 'space-between'
 }));
 
-export const CardsTextContainer = styled('div')({
+export const CardsTextBox = styled('div')({
   display: 'flex',
   flexDirection: 'column'
 });
-export const CardsActionsContainer = styled('div')({
+export const CardsActions = styled('div')({
   display: 'flex',
   flexDirection: 'column'
 });
