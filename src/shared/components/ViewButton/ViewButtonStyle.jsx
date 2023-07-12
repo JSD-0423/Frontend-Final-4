@@ -1,5 +1,4 @@
 import { styled } from '@mui/material/styles';
-import { fontSize } from '@mui/system';
 import { Button } from '@mui/material';
 
 export const ViewAllButton = styled(Button)(({ theme }) => ({

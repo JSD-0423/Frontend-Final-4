@@ -1,9 +1,8 @@
 import React from 'react';
 import { NewArrivalBox, HeadingBox, CardsBox } from './NewArrivalsStyle';
 import { Typography } from '@mui/material';
-import ProductCard from '../ProductCard/ProductCard';
-
 import ViewButton from '../ViewButton/ViewButton';
+import MyCarousel from '../Carousel/Carousel';
 
 function NewArrivals() {
   return (
@@ -13,26 +12,7 @@ function NewArrivals() {
         <ViewButton></ViewButton>
       </HeadingBox>
       <CardsBox>
-        <ProductCard
-          productName={'Grande'}
-          ProductSpecifications={'Blossom Pouch'}
-          ProductPrice={'$39.49'}
-        />
-        <ProductCard
-          productName={'Grande'}
-          ProductSpecifications={'Blossom Pouch'}
-          ProductPrice={'$39.49'}
-        />
-        <ProductCard
-          productName={'Grande'}
-          ProductSpecifications={'Blossom Pouch'}
-          ProductPrice={'$39.49'}
-        />
-        <ProductCard
-          productName={'Grande'}
-          ProductSpecifications={'Blossom Pouch'}
-          ProductPrice={'$39.49'}
-        />
+        <MyCarousel />
       </CardsBox>
     </NewArrivalBox>
   );

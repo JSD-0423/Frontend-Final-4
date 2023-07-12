@@ -4,9 +4,9 @@ import Typography from '@mui/material/Typography';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import { CardsDetailsBox, CardsTextBox, CardsActions, ProductItemCard } from './ProductCardStyle';
 
-export default function ProductCard({ productName, ProductPrice, ProductSpecifications }) {
+function ProductCard({ productId, productName, ProductPrice, ProductSpecifications, rating }) {
   return (
-    <ProductItemCard>
+    <ProductItemCard id={productId}>
       <CardMedia
         component="img"
         height="194"
@@ -28,6 +28,9 @@ export default function ProductCard({ productName, ProductPrice, ProductSpecific
           <FavoriteBorderIcon />
         </CardsActions>
       </CardsDetailsBox>
+      {rating && <div>{rating}</div>}
     </ProductItemCard>
   );
 }
+
+export default ProductCard;

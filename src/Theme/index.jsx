@@ -1,5 +1,5 @@
 import { createTheme } from '@mui/material/styles';
-import { orange, purple, green } from '@mui/material/colors';
+import { orange, green } from '@mui/material/colors';
 import '@fontsource/inter/100.css';
 import '@fontsource/inter/200.css';
 import '@fontsource/inter/300.css';
@@ -9,7 +9,6 @@ import '@fontsource/inter/600.css';
 import '@fontsource/inter/700.css';
 import '@fontsource/inter/800.css';
 import '@fontsource/inter/900.css';
-import { color, lineHeight } from '@mui/system';
 
 export const theme = createTheme({
   status: {
@@ -24,7 +23,13 @@ export const theme = createTheme({
     }
   },
   typography: {
-    h1: { fontFamily: 'Inter', fontSize: 34, fontWeight: 600, color: ' #13101E' },
+    h1: {
+      fontFamily: 'Inter',
+      fontSize: 34,
+      fontWeight: 600,
+      color: ' #13101E',
+      lineHeight: '44px'
+    },
     body1: {
       fontFamily: 'Inter',
       fontSize: 14,
@@ -38,6 +43,15 @@ export const theme = createTheme({
       fontWeight: 500,
       color: ' #13101E',
       lineHeight: '20px'
+    },
+    breakpoints: {
+      values: {
+        xs: 0,
+        sm: 600,
+        md: 900,
+        lg: 1200,
+        xl: 1536
+      }
     }
   }
 });
