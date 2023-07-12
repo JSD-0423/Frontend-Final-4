@@ -6,7 +6,7 @@ function IconCard({ iconUrl,backgroundColor }) {
         <IConCardImageContainer>
         <img src={iconUrl}/>
         </IConCardImageContainer>
-        
+   
     </IconCardContainer>
    
   );

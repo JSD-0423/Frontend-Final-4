@@ -1,6 +1,7 @@
 import { HandpickedCollectionsBox, HandpickedCollectionsContainer, ImageListBannerHeader, ImageListStyle } from './style';
 import IconCard from '../IconCard';
 import ImageCard from '../ImageCard';
+import theme from '../../../Theme/index'
 function ImageListBanner({
   images,
   icons,
@@ -24,7 +25,7 @@ function ImageListBanner({
             })}
           {icons &&
             icons.map((item) => {
-              return <IconCard iconUrl={item.imageurl} backgroundColor={'#F4F4F4'} />;
+              return <IconCard iconUrl={item.imageurl} backgroundColor={theme.palette.primary.grey} />;
             })}
         </ImageListStyle>
       </HandpickedCollectionsContainer>
