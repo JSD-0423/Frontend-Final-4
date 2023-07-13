@@ -118,8 +118,8 @@ function MyCarousel() {
               productId={item.id}
               key={item.id}
               productName={item.name}
-              ProductPrice={item.price}
-              ProductSpecifications={item.title}
+              productPrice={item.price}
+              productSpecifications={item.title}
             />
           );
         })}

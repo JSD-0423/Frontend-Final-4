@@ -4,7 +4,7 @@ import Typography from '@mui/material/Typography';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import { CardsDetailsBox, CardsTextBox, CardsActions, ProductItemCard } from './ProductCardStyle';
 
-function ProductCard({ productId, productName, ProductPrice, ProductSpecifications, rating }) {
+function ProductCard({ productId, productName, productPrice, productSpecifications, rating }) {
   return (
     <ProductItemCard id={productId}>
       <CardMedia
@@ -20,9 +20,9 @@ function ProductCard({ productId, productName, ProductPrice, ProductSpecificatio
             {productName}
           </Typography>
           <Typography variant="body1" marginBottom={'5px'}>
-            {ProductSpecifications}
+            {productSpecifications}
           </Typography>
-          <Typography variant="body2">{ProductPrice}</Typography>
+          <Typography variant="body2">{productPrice}</Typography>
         </CardsTextBox>
         <CardsActions>
           <FavoriteBorderIcon />
