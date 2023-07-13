@@ -10,6 +10,7 @@ import DolceGabbana from '../../assets/images/Dolce_&_Gabbana.png';
 import HM from '../../assets/images/H&M-Logo.png';
 import zara from '../../assets/images/Zara.png';
 import Prada from '../../assets/images/Prada.png';
+import { CustomCarousel } from '../../shared';
 import { theme } from '../../Theme/index';
 const handpickedcollection = [
   {
@@ -52,6 +53,7 @@ const brands = [
 function HomePage() {
   return (
     <div>
+      <CustomCarousel />
       <ImageListBanner
         images={handpickedcollection}
         cols={4}
