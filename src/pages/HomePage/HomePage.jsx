@@ -13,7 +13,7 @@ import Prada from '../../assets/images/Prada.png';
 import NewArrivals from '../../shared/components/NewArrivals/NewArrivals';
 import { CustomCarousel } from '../../shared';
 import { theme } from '../../Theme/index';
-const handpickedcollection = [
+const handpickedCollection = [
   {
     imageurl: personalCare,
     name: 'Personal Care'
@@ -57,7 +57,7 @@ function HomePage() {
       <CustomCarousel />
       <NewArrivals />
       <ImageListBanner
-        images={handpickedcollection}
+        images={handpickedCollection}
         cols={4}
         backgroundColor={theme.palette.primary.main}
         headerText={'Handpicked Collections'}
