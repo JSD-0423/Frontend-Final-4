@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
 import ProductCard from '../ProductCard/ProductCard';
-import Carousel from 'react-material-ui-carousel';
-import { Box } from '@mui/system';
+import Carousel from 'better-react-carousel';
+import { Box } from '@mui/material';
 
 const carouselItems = [
   {
@@ -70,72 +69,62 @@ const carouselItems = [
 ];
 
 function MyCarousel() {
-  const [screenSize, setScreenSize] = useState(getCurrentDimension());
-
-  useEffect(() => {
-    const updateDimension = () => {
-      setScreenSize(getCurrentDimension());
-    };
-    window.addEventListener('resize', updateDimension);
-
-    return () => {
-      window.removeEventListener('resize', updateDimension);
-    };
-  }, [screenSize]);
-
-  function getCurrentDimension() {
-    return {
-      width: window.innerWidth,
-      height: window.innerHeight
-    };
-  }
-  const getItemsNumber = (width) => {
-    switch (true) {
-      case width > 1720:
-        return 6;
-      case width > 1480 && width < 1720:
-        return 5;
-      case width < 1480 && width > 1204:
-        return 4;
-      case width < 1204 && width > 878:
-        return 3;
-      case width <= 878 && width > 598:
-        return 2;
-      default:
-        return 1;
+  const responsiveLayout = [
+    {
+      breakpoint: 700,
+      cols: 2,
+      rows: 1,
+      gap: 40,
+      loop: true
+    },
+    {
+      breakpoint: 1200,
+      cols: 3,
+      rows: 1,
+      gap: 40,
+      loop: true
+    },
+    {
+      breakpoint: 1500,
+      cols: 4,
+      rows: 1,
+      gap: 40,
+      loop: true
+    },
+    {
+      breakpoint: 1900,
+      cols: 5,
+      rows: 1,
+      gap: 40,
+      loop: true
     }
-  };
-
-  const sliderItems = getItemsNumber(screenSize.width);
-  const items = [];
-
-  for (let i = 0; i < carouselItems.length; i += sliderItems) {
-    items.push(
-      <Box sx={{ display: 'flex', gap: '40px' }}>
-        {carouselItems.slice(i, i + sliderItems).map((item, index) => {
-          return (
-            <ProductCard
-              productId={item.id}
-              key={item.id}
-              productName={item.name}
-              productPrice={item.price}
-              productSpecifications={item.title}
-            />
-          );
-        })}
-      </Box>
-    );
-  }
+  ];
 
   return (
-    <Carousel
-      animation="slide"
-      autoPlay={false}
-      timeout={300}
-      indicators={false}
-      sx={{ width: '100%' }}>
-      {items}
-    </Carousel>
+    <Box sx={{ width: '100%' }}>
+      <Carousel
+        cols={4}
+        rows={1}
+        mobileBreakpoint={500}
+        responsiveLayout={responsiveLayout}
+        hideArrow={true}
+        autoplay={3500}
+        loop={true}>
+        {carouselItems.map((item) => {
+          return (
+            <Carousel.Item id={'carosel-item'}>
+              <ProductCard
+                productId={item.id}
+                key={item.id}
+                productName={item.name}
+                productPrice={item.price}
+                productSpecifications={item.title}
+              />
+            </Carousel.Item>
+          );
+        })}
+      </Carousel>
+    </Box>
   );
 }
 
