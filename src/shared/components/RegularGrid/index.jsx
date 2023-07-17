@@ -8,7 +8,7 @@ function RegularGrid({ listHeader, listItems }) {
         <ListItemHead>{listHeader}</ListItemHead>
         {listItems.map((item) => {
           return (
-            <ListItemComponent>
+            <ListItemComponent key={`${item}`}>
               <LinkComponent href="/">{item}</LinkComponent>
             </ListItemComponent>
           );
