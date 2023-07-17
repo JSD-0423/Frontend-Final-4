@@ -60,7 +60,7 @@ const CustomCarousel = () => {
   ];
 
   return (
-    <Box mt={2} sx={{ height: '20rem', paddingLeft: '24px', paddingRight: '24px' }}>
+    <Box mt={2} mb={8} sx={{ height: '20rem', paddingLeft: '24px', paddingRight: '24px' }}>
       <Carousel indicators={false} swipe={false} animation="slide" duration={800}>
         {items.map((item, i) => (
           <Item key={item.name + i++} item={item} />
