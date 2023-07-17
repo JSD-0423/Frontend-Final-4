@@ -1,9 +1,9 @@
-import { List } from '@mui/material';
-import { LinkComponent, ListItemComponent, ListItemHead, RegularGridStyle } from './style';
+import { Grid, List } from '@mui/material';
+import { LinkComponent, ListItemComponent, ListItemHead } from './style';
 
 function RegularGrid({ listHeader, listItems }) {
   return (
-    <RegularGridStyle item md={2} xs={12}>
+    <Grid item md={2} xs={12}>
       <List>
         <ListItemHead>{listHeader}</ListItemHead>
         {listItems.map((item) => {
@@ -14,7 +14,7 @@ function RegularGrid({ listHeader, listItems }) {
           );
         })}
       </List>
-    </RegularGridStyle>
+    </Grid>
   );
 }
 
