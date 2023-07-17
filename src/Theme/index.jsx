@@ -20,6 +20,9 @@ export const theme = createTheme({
     },
     secondary: {
       main: green[500]
+    },
+    text:{
+      lightText:'#B6B6B6'
     }
   },
   typography: {

@@ -6,6 +6,7 @@ import { Route, BrowserRouter, Routes } from 'react-router-dom';
 import HomePage from './pages/HomePage/HomePage';
 import NotFounPage from './pages/NotFoundPage/NotFounPage';
 import { Navbar } from './shared';
+import Footer from './shared/components/Footer';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="*" element={<NotFounPage />} />
         </Routes>
       </BrowserRouter>
+      <Footer/>
     </ThemeProvider>
   );
 }
