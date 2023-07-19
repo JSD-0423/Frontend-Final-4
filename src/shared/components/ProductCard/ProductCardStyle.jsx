@@ -3,7 +3,6 @@ import Card from '@mui/material/Card';
 
 export const ProductItemCard = styled(Card)(({ theme }) => ({
   width: '286px',
-  height: '268px',
   boxShadow: 'none'
 }));
 
