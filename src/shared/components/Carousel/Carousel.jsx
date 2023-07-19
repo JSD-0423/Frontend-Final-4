@@ -115,7 +115,6 @@ function MyCarousel() {
             <Carousel.Item id={'carosel-item'}>
               <ProductCard
                 productId={item.id}
-                key={item.id}
                 productName={item.name}
                 productPrice={item.price}
                 productSpecifications={item.title}
