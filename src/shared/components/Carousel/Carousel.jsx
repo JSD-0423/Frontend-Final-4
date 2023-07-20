@@ -106,7 +106,7 @@ function MyCarousel() {
         cols={4}
         rows={1}
         mobileBreakpoint={500}
-        responsiveLayout={responsiveLayout}
+        // responsiveLayout={responsiveLayout}
         hideArrow={true}
         autoplay={3500}
         loop={true}>
