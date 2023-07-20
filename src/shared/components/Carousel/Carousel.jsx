@@ -103,13 +103,14 @@ function MyCarousel() {
   return (
     <Box sx={{ width: '100%' }}>
       <Carousel
-        cols={4}
-        rows={1}
-        mobileBreakpoint={500}
-        // responsiveLayout={responsiveLayout}
-        hideArrow={true}
-        autoplay={3500}
-        loop={true}>
+      // cols={4}
+      // rows={1}
+      // mobileBreakpoint={500}
+      // // responsiveLayout={responsiveLayout}
+      // hideArrow={true}
+      // autoplay={3500}
+      // loop={true}
+      >
         {carouselItems.map((item) => {
           return (
             <Carousel.Item id={'carosel-item'}>
