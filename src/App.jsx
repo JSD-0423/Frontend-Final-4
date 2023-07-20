@@ -7,6 +7,7 @@ import HomePage from './pages/HomePage/HomePage';
 import NotFounPage from './pages/NotFoundPage/NotFounPage';
 import { Navbar } from './shared';
 import Footer from './shared/components/Footer';
+import CollectionPage from './pages/CollectionPage/CollectionPage';
 
 function App() {
   return (
@@ -15,10 +16,11 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/3" element={<CollectionPage />} />
           <Route path="*" element={<NotFounPage />} />
         </Routes>
       </BrowserRouter>
-      <Footer/>
+      <Footer />
     </ThemeProvider>
   );
 }
