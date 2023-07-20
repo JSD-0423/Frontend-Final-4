@@ -1,10 +1,12 @@
 import React from 'react';
 import { CustomBreadcrumbs } from '../../shared';
+import ProductsContainer from './components/ProductsContainer/ProductsContainer';
 
 const CollectionPage = () => {
   return (
     <div>
-      <CustomBreadcrumbs crumbs={['collection']} />
+      <CustomBreadcrumbs />
+      <ProductsContainer />
     </div>
   );
 };

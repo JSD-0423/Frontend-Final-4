@@ -16,7 +16,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/3" element={<CollectionPage />} />
+          <Route path="/collection" element={<CollectionPage />} />
           <Route path="*" element={<NotFounPage />} />
         </Routes>
       </BrowserRouter>

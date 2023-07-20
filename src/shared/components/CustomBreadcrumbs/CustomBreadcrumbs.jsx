@@ -1,4 +1,4 @@
-import { Breadcrumbs, Stack, Typography } from '@mui/material';
+import { Breadcrumbs, Stack, Toolbar, Typography } from '@mui/material';
 import { Link, useLocation } from 'react-router-dom';
 
 const CustomBreadcrumbs = () => {
@@ -15,17 +15,9 @@ const CustomBreadcrumbs = () => {
 
       if (crumb === lastLink) {
         return (
-          <>
-            {typeof Number(crumb) !== 'number' ? (
-              <Typography color="#626262" fontWeight={500}>
-                {crumb.charAt(0).toUpperCase() + crumb.slice(1)}
-              </Typography>
-            ) : (
-              <Typography key={crumb} color="#626262" fontWeight={500}>
-                Label
-              </Typography>
-            )}
-          </>
+          <Typography key={crumb} color="#626262" fontWeight={500}>
+            {isNaN(crumb) ? crumb.charAt(0).toUpperCase() + crumb.slice(1) : 'Label'}
+          </Typography>
         );
       }
 
@@ -39,7 +31,7 @@ const CustomBreadcrumbs = () => {
     });
 
   return (
-    <Stack m={2}>
+    <Toolbar>
       <Breadcrumbs separator="›">
         <Link to="/">
           <Typography color="#1B4B66" fontWeight={500}>
@@ -48,7 +40,7 @@ const CustomBreadcrumbs = () => {
         </Link>
         {crumbs}
       </Breadcrumbs>
-    </Stack>
+    </Toolbar>
   );
 };
 
