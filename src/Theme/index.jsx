@@ -17,9 +17,9 @@ export const theme = createTheme({
   palette: {
     primary: {
       main: '#1B4B66',
-      black:'black',
-      white:'white',
-      grey:'#F4F4F4'
+      black: 'black',
+      white: 'white',
+      grey: '#F4F4F4'
     },
     secondary: {
       main: green[500]
@@ -50,9 +50,16 @@ export const theme = createTheme({
       color: ' #13101E',
       lineHeight: '20px'
     },
+    body3: {
+      fontFamily: 'Inter',
+      fontSize: 52,
+      fontWeight: 700,
+      color: ' #97451F',
+      lineHeight: '68px'
+    },
     breakpoints: {
       values: {
-        xs: 0,
+        xs: 300,
         sm: 600,
         md: 900,
         lg: 1200,
