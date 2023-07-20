@@ -106,9 +106,9 @@ function MyCarousel() {
         cols={4}
         rows={1}
         mobileBreakpoint={500}
-        responsiveLayout={responsiveLayout}
+        responsiveLayout={[responsiveLayout]}
         hideArrow={true}
-        autoplay={3500}
+        autoplay={3000}
         loop={true}>
         {carouselItems.map((item) => {
           return (
