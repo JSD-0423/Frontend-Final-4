@@ -56,7 +56,7 @@ function HomePage() {
   return (
     <div>
       <CustomCarousel />
-      <NewArrivals />
+      {/* <NewArrivals /> */}
       <ImageListBanner
         images={handpickedCollection}
         cols={4}
