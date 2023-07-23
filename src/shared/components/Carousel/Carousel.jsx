@@ -112,7 +112,7 @@ function MyCarousel() {
         loop={true}>
         {carouselItems.map((item) => {
           return (
-            <Carousel.Item id={'carosel-item'}>
+            <Carousel.Item key={item.id} id={'carosel-item'}>
               <ProductCard
                 productId={item.id}
                 productName={item.name}
