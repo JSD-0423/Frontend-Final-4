@@ -14,6 +14,8 @@ import Prada from '../../assets/images/Prada.png';
 import { CustomCarousel } from '../../shared';
 import { theme } from '../../Theme/index';
 import SpecialProductBanner from '../../shared/components/SpecialProductsBanner/SpecialProductBanner';
+import CustomizedProductsBanner from '../../shared/components/CustomizedProductsBanner/CustomizedProductsBanner';
+
 const handpickedCollection = [
   {
     imageurl: personalCare,
@@ -75,6 +77,7 @@ function HomePage() {
         paddingTop={'60px'}
       />
       <SpecialProductBanner imgUrl={'../assets/images/BackGround.png'} />
+      <CustomizedProductsBanner />
     </div>
   );
 }

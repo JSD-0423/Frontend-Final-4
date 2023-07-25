@@ -22,10 +22,10 @@ export const theme = createTheme({
       grey: '#F4F4F4'
     },
     secondary: {
-      main: green[500]
+      main: '#A53F64'
     },
-    text:{
-      lightText:'#B6B6B6'
+    text: {
+      lightText: '#B6B6B6'
     }
   },
   typography: {
@@ -56,6 +56,13 @@ export const theme = createTheme({
       fontWeight: 700,
       color: ' #97451F',
       lineHeight: '68px'
+    },
+    body4: {
+      fontFamily: 'Inter',
+      fontSize: 40,
+      fontWeight: 700,
+
+      lineHeight: '52px'
     },
     breakpoints: {
       values: {
