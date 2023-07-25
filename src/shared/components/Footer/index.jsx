@@ -31,20 +31,23 @@ function Footer() {
   return (
     <FooterComponent>
       <Grid container spacing={2}>
-        <RegularGrid listHeader={'Shop by Category'} listItems={categories}/>
-        <RegularGrid listHeader={'Shop by Products'} listItems={products}/>
-        <CustomGrid
-          item
-          md={8}
-          xs={12}
-          >
+        <RegularGrid listHeader={'Shop by Category'} listItems={categories} />
+        <RegularGrid listHeader={'Shop by Products'} listItems={products} />
+        <CustomGrid item md={8} xs={12}>
           <List>
             <ListItemComponent>
               {socialMediaIcons.map((image) => {
-                return <a href='/' key={`${image}`}><IconImage src={image}/></a>
+                return (
+                  <a href="/" key={`${image}`}>
+                    <IconImage src={image} />
+                  </a>
+                );
               })}
             </ListItemComponent>
-            <ListItemHead><img src={location}/>United States</ListItemHead>
+            <ListItemHead>
+              <img src={location} />
+              United States
+            </ListItemHead>
             <ListItemComponent>© 2021 | Cora Leviene All Rights Reserved</ListItemComponent>
           </List>
         </CustomGrid>
