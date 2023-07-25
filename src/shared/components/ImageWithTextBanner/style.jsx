@@ -9,12 +9,12 @@ export const ImageWithTextBannerStyle = styled('div')(({ theme }) => ({
   }));
   export const TextOnCollectionImg = styled('div')(({ theme }) => ({
    position: 'absolute', 
-   top: '110px', 
-   right: '120px',
-   fontSize:'35px' 
+   top: '27%', 
+   right: '7%',
+   fontSize:'2.7rem' 
   }));
   export const TextParagraph = styled('div')(({ theme }) => ({
-    fontSize:'70px',
+    fontSize:'5rem',
     paddingTop:'20px'
     
    }));
