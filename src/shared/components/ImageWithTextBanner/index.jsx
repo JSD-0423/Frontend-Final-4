@@ -1,4 +1,4 @@
-import { CollectionImg, ImageWithTextBannerStyle, TextOnCollectionImg, TextParagraph } from "./style";
+import { CollectionImg } from "./style";
 
 function ImageWithTextBanner({ imgSrc }) {
   return (

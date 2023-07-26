@@ -11,6 +11,7 @@ const CollectionsPage = () => {
   const { search } = useLocation();
   const categoryId = search.slice(search.lastIndexOf('=') + 1);
    const { data, loading, error } = useFetchApi(`/categories/${categoryId}`);
+   console.log(data)
 
   return (
     <div>
