@@ -1,6 +1,6 @@
 import React from 'react';
-import { ProductsBanner } from './CustomizedProductsBannerstyle';
 import CustomizedProduct from '../CustomizedProducts/CustomizedProduct';
+import { ProductsBanner } from './CustomizedProductsBannerStyle';
 const CustomizedProductsBanner = () => {
   return (
     <ProductsBanner>
