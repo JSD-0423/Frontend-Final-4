@@ -5,11 +5,12 @@ export const IconCardContainer = styled('div')(({ theme }) => ({
   borderRadius: '10px',
   minWidth: '168px',
   minHeight: '168px',
-  width: '100%'
+  width: '100%',
+  display:'flex',
+  alignItems:'center',
+  justifyContent:'center'
 }));
 export const IConCardImageContainer = styled('div')({
-  display: 'flex',
-  justifyContent: 'center',
-  height: '100%',
-  alignItems: 'center'
+  width:'160px',
+  height:'50px',
 });
