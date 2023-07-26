@@ -10,18 +10,18 @@ const ProductsContainer = ({ categoryId }) => {
     `/categories/${categoryId}/products?perPage=2&page=${pagination}`
   );
 
-  if (!loading && data?.data?.length === 0)
-    return (
-      <Typography
-        variant="body2"
-        color={'error'}
-        sx={{ height: '11rem' }}
-        display={'flex'}
-        alignItems={'center'}
-        justifyContent={'center'}>
-        No Items Found!
-      </Typography>
-    );
+  // if (!loading && data?.data?.length === 0)
+  //   return (
+  //     <Typography
+  //       variant="body2"
+  //       color={'error'}
+  //       sx={{ height: '11rem' }}
+  //       display={'flex'}
+  //       alignItems={'center'}
+  //       justifyContent={'center'}>
+  //       No Items Found!
+  //     </Typography>
+  //   );
   if (error) return <div>Error</div>;
 
   return (
