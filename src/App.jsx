@@ -12,15 +12,15 @@ import CollectionsPage from './pages/CollectionsPage/CollectionsPage';
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <Navbar />
       <BrowserRouter>
+        <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/collection" element={<CollectionsPage />} />
+          <Route path="/:categoryName" element={<CollectionsPage />} />
           <Route path="*" element={<NotFounPage />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
-      <Footer />
     </ThemeProvider>
   );
 }

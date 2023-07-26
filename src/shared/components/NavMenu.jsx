@@ -2,26 +2,35 @@ import { Box, Button, Menu, MenuItem, Typography } from '@mui/material';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Logo } from './Navbar';
+import { Link } from 'react-router-dom';
 
-const pages = ['Handbags', 'Watches', 'Skincare', 'Jewellery', 'Apparels'];
+const categoriesList = [
+  { id: 1, name: 'Handbags' },
+  { id: 2, name: 'Watches' },
+  { id: 3, name: 'Skincare' },
+  { id: 4, name: 'Jewellery' },
+  { id: 5, name: 'Apparels' }
+];
 
 const NavMenu = ({ handleOpenNavMenu, handleCloseNavMenu, anchorElNav }) => {
   return (
     <>
       <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-        {pages.map((page) => (
-          <Button
-            key={page}
-            sx={{
-              my: 2,
-              color: 'black',
-              display: 'block',
-              textTransform: 'capitalize',
-              fontSize: '.9rem',
-              paddingInline: '5px'
-            }}>
-            {page}
-          </Button>
+        {categoriesList.map((category) => (
+          <Link to={`/${category.name.toLocaleLowerCase()}?id=${category.id}`} key={category.id}>
+            <Button
+              id={category.id}
+              sx={{
+                my: 2,
+                color: 'black',
+                display: 'block',
+                textTransform: 'capitalize',
+                fontSize: '.9rem',
+                paddingInline: '5px'
+              }}>
+              {category.name}
+            </Button>
+          </Link>
         ))}
       </Box>
 
@@ -57,9 +66,12 @@ const NavMenu = ({ handleOpenNavMenu, handleCloseNavMenu, anchorElNav }) => {
           sx={{
             display: { xs: 'block', md: 'none' }
           }}>
-          {pages.map((page) => (
-            <MenuItem key={page} onClick={handleCloseNavMenu}>
-              <Typography textAlign="center">{page}</Typography>
+          {categoriesList.map((category) => (
+            <MenuItem
+              key={category.id}
+              onClick={handleCloseNavMenu}
+              sx={{ outline: '1px solid red' }}>
+              <Typography textAlign="center">{category.name}</Typography>
             </MenuItem>
           ))}
         </Menu>

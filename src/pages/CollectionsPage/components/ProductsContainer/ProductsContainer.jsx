@@ -1,12 +1,27 @@
-import { Grid, Toolbar } from '@mui/material';
+import { Grid, Toolbar, Pagination } from '@mui/material';
 import { ProductCard } from '../../../../shared';
-import { productsList } from '../../../../constants';
+import { useEffect, useState } from 'react';
+import { getRequest } from '../../../../services/ApiService';
 
-const ProductsContainer = () => {
+const ProductsContainer = ({ categoryId }) => {
+  const [products, setProducts] = useState(null);
+  const [pagination, setPagination] = useState(1);
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await getRequest(
+        `/categories/${categoryId}/products?perPage=2&page=${pagination}`
+      );
+      console.log(res);
+      setProducts(res);
+    };
+
+    // fetchData();
+  }, [categoryId, pagination]);
+
   return (
-    <Toolbar>
+    <Toolbar sx={{ display: 'flex', flexDirection: 'column', gap: '4rem' }}>
       <Grid container spacing={3}>
-        {productsList.map((product) => (
+        {products?.data?.map((product) => (
           <Grid
             key={product.id}
             item
@@ -22,12 +37,18 @@ const ProductsContainer = () => {
               productId={product.id}
               productName={product.name}
               productPrice={product.price}
-              productSpecifications={product.title}
+              productSpecifications={'Blossom Pouch'}
               rating={product.rating}
             />
           </Grid>
         ))}
       </Grid>
+      <Pagination
+        count={products?.pagination?.totalPages || 3}
+        variant="outlined"
+        shape="rounded"
+        onChange={(e, page) => setPagination(page)}
+      />
     </Toolbar>
   );
 };
