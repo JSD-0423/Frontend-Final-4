@@ -1,6 +1,6 @@
 import { CollectionImg, ImageWithTextBannerStyle, TextOnCollectionImg, TextParagraph } from "./style";
 
-function ImageWithTextBanner({ imgSrc, headerText, Description }) {
+function ImageWithTextBanner({ imgSrc }) {
   return (
       <CollectionImg src={imgSrc}/>
   );

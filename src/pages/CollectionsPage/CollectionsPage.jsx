@@ -7,7 +7,7 @@ import heroimage from '../../assets/images/heroimage.png'
 const CollectionsPage = () => {
   return (
     <div>
-      <ImageWithTextBanner imgSrc={heroimage} headerText={'UPTO 70% OFF'} Description={'BLACK FRIDAY'}/>
+      <ImageWithTextBanner imgSrc={heroimage}/>
       <CustomBreadcrumbs />
       <ProductsContainer />
     </div>
