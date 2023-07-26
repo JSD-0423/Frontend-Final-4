@@ -10,7 +10,7 @@ const ProductsContainer = ({ categoryId }) => {
     `/categories/${categoryId}/products?perPage=2&page=${pagination}`
   );
 
-  if (!loading && data?.data.length === 0)
+  if (!loading && data?.data?.length === 0)
     return (
       <Typography
         variant="body2"
