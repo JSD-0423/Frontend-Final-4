@@ -18,7 +18,6 @@ const makeRequest = async (method, ...args) => {
 };
 
 export const getRequest = (endpoint, config) => {
-  console.log(endpoint);
   return makeRequest('get', endpoint, config);
 };
 

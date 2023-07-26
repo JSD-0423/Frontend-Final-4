@@ -3,20 +3,12 @@ import { CustomBreadcrumbs } from '../../shared';
 import ProductsContainer from './components/ProductsContainer/ProductsContainer';
 import { useLocation } from 'react-router-dom';
 import { getRequest } from '../../services/ApiService';
+import { useFetchApi } from '../../hooks/useFetchApi';
 
 const CollectionsPage = () => {
   const { search } = useLocation();
-  const [categoryData, setCategoryData] = useState(null);
   const categoryId = search.slice(search.lastIndexOf('=') + 1);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const data = await getRequest(`/categories/${categoryId}`);
-      setCategoryData(data);
-    };
-
-    // fetchData();
-  }, [search]);
+  // const { data, loading, error } = useFetchApi(`/categories/${categoryId}`);
 
   return (
     <div>
