@@ -1,7 +1,6 @@
 import { Button, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import EastRoundedIcon from '@mui/icons-material/EastRounded';
-import zIndex from '@mui/material/styles/zIndex';
 
 export const ProductBox = styled('div')(({ theme }) => ({
   height: '228px',
