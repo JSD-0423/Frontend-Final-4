@@ -8,6 +8,7 @@ import SearchBar from './SearchBar';
 import NavMenu from './NavMenu';
 import UserMenu from './UserMenu';
 import MobileUserMenu from './MobileUserMenu';
+import { Link } from 'react-router-dom';
 
 export const Logo = styled(Typography)(({ theme }) => ({
   marginRight: '2rem',
@@ -54,13 +55,15 @@ function Navbar() {
         position="static"
         sx={{ bgcolor: 'var(--bg-white)', color: 'black', boxShadow: 'none' }}>
         <Toolbar>
-          <Logo
-            variant="h6"
-            sx={{
-              display: { xs: 'none', md: 'flex' }
-            }}>
-            CORA'L
-          </Logo>
+          <Link to="/">
+            <Logo
+              variant="h6"
+              sx={{
+                display: { xs: 'none', md: 'flex' }
+              }}>
+              CORA'L
+            </Logo>
+          </Link>
 
           <NavMenu
             handleOpenNavMenu={handleOpenNavMenu}

@@ -11,13 +11,20 @@ import {
 } from './ProductCardStyle';
 import { Stack } from '@mui/material';
 
-function ProductCard({ productId, productName, productPrice, productSpecifications, rating }) {
+function ProductCard({
+  productId,
+  productName,
+  productPrice,
+  productSpecifications,
+  rating,
+  productImage
+}) {
   return (
     <ProductItemCard id={productId}>
       <CardMedia
         component="img"
         height="286"
-        image="../assets/images/pink-bag-small 2.png"
+        image={productImage || `../assets/images/pink-bag-small 2.png`}
         alt="Paella dish"
         sx={{ backgroundColor: 'gray', borderRadius: '8px', marginBottom: '4px' }}
       />
