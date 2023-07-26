@@ -1,9 +1,9 @@
 import { CollectionImg } from "./style";
 
-function ImageWithTextBanner({ imgSrc }) {
+function ImageBanner({ imgSrc }) {
   return (
       <CollectionImg src={imgSrc}/>
   );
 }
 
-export default ImageWithTextBanner;
+export default ImageBanner;

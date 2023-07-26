@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { CustomBreadcrumbs } from '../../shared';
 import ProductsContainer from './components/ProductsContainer/ProductsContainer';
-import ImageWithTextBanner from '../../shared/components/ImageWithTextBanner';
+import ImageBanner from '../../shared/components/ImageBanner';
 import { useLocation } from 'react-router-dom';
 import { getRequest } from '../../services/ApiService';
 import { useFetchApi } from '../../hooks/useFetchApi';
@@ -14,7 +14,7 @@ const CollectionsPage = () => {
 
   return (
     <div>
-      <ImageWithTextBanner imgSrc={data?.image}/>
+      <ImageBanner imgSrc={data?.image}/>
       <CustomBreadcrumbs />
       <ProductsContainer categoryId={categoryId} />
     </div>
