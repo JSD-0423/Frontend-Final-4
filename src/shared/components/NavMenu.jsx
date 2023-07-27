@@ -67,21 +67,22 @@ const NavMenu = ({ handleOpenNavMenu, handleCloseNavMenu, anchorElNav }) => {
             display: { xs: 'block', md: 'none' }
           }}>
           {categoriesList.map((category) => (
-            <MenuItem
-              key={category.id}
-              onClick={handleCloseNavMenu}
-              sx={{ outline: '1px solid red' }}>
-              <Typography textAlign="center">{category.name}</Typography>
-            </MenuItem>
+            <Link to={`/${category.name.toLocaleLowerCase()}?id=${category.id}`} key={category.id}>
+              <MenuItem key={category.id} onClick={handleCloseNavMenu}>
+                <Typography textAlign="center">{category.name}</Typography>
+              </MenuItem>
+            </Link>
           ))}
         </Menu>
-        <Logo
-          variant="h6"
-          sx={{
-            display: { xs: 'flex', md: 'none' }
-          }}>
-          CORA'L
-        </Logo>
+        <Link to="/">
+          <Logo
+            variant="h6"
+            sx={{
+              display: { xs: 'flex', md: 'none' }
+            }}>
+            CORA'L
+          </Logo>
+        </Link>
       </Box>
     </>
   );
