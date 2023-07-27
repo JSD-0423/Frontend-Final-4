@@ -1,8 +1,8 @@
 import { Grid, Toolbar, Pagination, Typography } from '@mui/material';
-import { ProductCard, Spinner } from '../../../../shared';
 import { useState } from 'react';
 import { useFetchApi } from '../../../../hooks/useFetchApi';
 import { Link, useLocation } from 'react-router-dom';
+import { ErrorMessage, ProductCard, Spinner } from '../../../../shared';
 
 const ProductsContainer = ({ categoryId }) => {
   const [pagination, setPagination] = useState(1);
@@ -23,7 +23,7 @@ const ProductsContainer = ({ categoryId }) => {
         No Items Found!
       </Typography>
     );
-  if (error) return <div>Error</div>;
+  if (error) return <ErrorMessage message={error.message} />;
 
   return (
     <Toolbar sx={{ display: 'flex', flexDirection: 'column', gap: '4rem' }}>
