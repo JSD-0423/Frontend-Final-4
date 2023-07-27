@@ -3,14 +3,7 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Logo } from './Navbar';
 import { Link } from 'react-router-dom';
-
-const categoriesList = [
-  { id: 1, name: 'Handbags' },
-  { id: 2, name: 'Watches' },
-  { id: 3, name: 'Skincare' },
-  { id: 4, name: 'Jewellery' },
-  { id: 5, name: 'Apparels' }
-];
+import { categoriesList } from '../../constants';
 
 const NavMenu = ({ handleOpenNavMenu, handleCloseNavMenu, anchorElNav }) => {
   return (

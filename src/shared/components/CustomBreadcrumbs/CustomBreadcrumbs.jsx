@@ -1,6 +1,14 @@
 import { Breadcrumbs, Stack, Toolbar, Typography } from '@mui/material';
 import { Link, useLocation } from 'react-router-dom';
 
+const specialCases = {
+  handbags: 'handbags?id=1',
+  watches: 'watches?id=2',
+  skincare: 'skincare?id=3',
+  jewellery: 'jewellery?id=4',
+  apparels: 'apparels?id=5'
+};
+
 const CustomBreadcrumbs = () => {
   const location = useLocation();
 
@@ -9,9 +17,13 @@ const CustomBreadcrumbs = () => {
 
   const crumbs = location.pathname
     .split('/')
-    .filter((crumb) => crumb !== '')
+    .filter((crumb) => crumb !== '' && crumb !== 'products')
     .map((crumb) => {
-      currentLink += `/${crumb}`;
+      if (!specialCases[crumb]) {
+        currentLink += `/${crumb}`;
+      } else {
+        currentLink += `/${specialCases[crumb]}`;
+      }
 
       if (crumb === lastLink) {
         return (

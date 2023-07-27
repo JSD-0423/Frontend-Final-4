@@ -1,14 +1,15 @@
 import { Grid, Toolbar, Pagination, Typography } from '@mui/material';
-import { ProductCard } from '../../../../shared';
+import { ProductCard, Spinner } from '../../../../shared';
 import { useState } from 'react';
 import { useFetchApi } from '../../../../hooks/useFetchApi';
-import { Spinner } from '../../../../shared';
+import { Link, useLocation } from 'react-router-dom';
 
 const ProductsContainer = ({ categoryId }) => {
   const [pagination, setPagination] = useState(1);
   const { data, loading, error } = useFetchApi(
     `/categories/${categoryId}/products?perPage=2&page=${pagination}`
   );
+  const { pathname } = useLocation();
 
   if (!loading && data?.data?.length === 0)
     return (
@@ -39,14 +40,16 @@ const ProductsContainer = ({ categoryId }) => {
               xl={2.4}
               alignItems={'center'}
               display={'flex'}>
-              <ProductCard
-                productId={product.id}
-                productName={product.name}
-                productPrice={product.price}
-                productSpecifications={'Blossom Pouch'}
-                rating={product.rating}
-                productImage={product.images[0].image}
-              />
+              <Link to={`/products/${pathname.slice(1)}/${product.id}`}>
+                <ProductCard
+                  productId={product.id}
+                  productName={product.name}
+                  productPrice={product.price}
+                  productSpecifications={'Blossom Pouch'}
+                  rating={product.rating}
+                  productImage={product.images[0].image}
+                />
+              </Link>
             </Grid>
           ))}
         </Grid>
