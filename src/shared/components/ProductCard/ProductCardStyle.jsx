@@ -3,7 +3,7 @@ import Card from '@mui/material/Card';
 import { Rating } from '@mui/material';
 
 export const ProductItemCard = styled(Card)(({ theme }) => ({
-  width: '250px',
+  width: '284px',
   boxShadow: 'none'
 }));
 
