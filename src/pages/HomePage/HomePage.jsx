@@ -15,6 +15,7 @@ import { CustomCarousel } from '../../shared';
 import { theme } from '../../Theme/index';
 import SpecialProductBanner from '../../shared/components/SpecialProductsBanner/SpecialProductBanner';
 import CustomizedProductsBanner from '../../shared/components/CustomizedProductsBanner/CustomizedProductsBanner';
+import { useFetchApi } from '../../hooks/useFetchApi';
 
 const handpickedCollection = [
   {
@@ -34,27 +35,10 @@ const handpickedCollection = [
     name: 'Sun Glasses'
   }
 ];
-const brands = [
-  {
-    imageurl: BIBA
-  },
-  {
-    imageurl: Chanel
-  },
-  {
-    imageurl: DolceGabbana
-  },
-  {
-    imageurl: HM
-  },
-  {
-    imageurl: Prada
-  },
-  {
-    imageurl: zara
-  }
-];
+
 function HomePage() {
+  const { data: brands, loading, error } = useFetchApi(`/brands`);
+
   return (
     <div>
       <CustomCarousel />
@@ -76,7 +60,7 @@ function HomePage() {
         gap={50}
         paddingTop={'60px'}
       />
-      <SpecialProductBanner imgUrl={'../assets/images/BackGround.png'} />
+      <SpecialProductBanner imgUrl={'../assets/images/BackGround.png'} path={'/limited-edition'} />
       <CustomizedProductsBanner />
     </div>
   );

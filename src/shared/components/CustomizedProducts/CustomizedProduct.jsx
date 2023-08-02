@@ -6,6 +6,7 @@ import {
   ArrowButton,
   ArrowIcon
 } from './CustomizedProductStyles';
+import { Link } from 'react-router-dom';
 
 const CustomizedProduct = ({
   imgUrl,
@@ -13,7 +14,8 @@ const CustomizedProduct = ({
   variant,
   textColor,
   backGround,
-  arrowColor
+  arrowColor,
+  path
 }) => {
   return (
     <ProductBox>
@@ -21,9 +23,11 @@ const CustomizedProduct = ({
       <ProductsSpecification variant={variant} color={textColor}>
         {productsDetails}
       </ProductsSpecification>
-      <ArrowButton sx={{ background: backGround }} color={arrowColor}>
-        <ArrowIcon sx={{ fontSize: '52px', lineHeight: '52px' }} />
-      </ArrowButton>
+      <Link to={path}>
+        <ArrowButton sx={{ background: backGround }} color={arrowColor}>
+          <ArrowIcon sx={{ fontSize: '52px', lineHeight: '52px' }} />
+        </ArrowButton>
+      </Link>
     </ProductBox>
   );
 };

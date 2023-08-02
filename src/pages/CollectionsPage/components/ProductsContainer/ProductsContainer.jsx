@@ -14,11 +14,11 @@ const ProductsContainer = ({ categoryId }) => {
     pathname === '/discount' ||
     pathname === '/popular'
       ? useFetchApi(
-          `/products?perPage=2&page=${pagination}/${
-            (pathname === '/limited-edition' && 'limited-edition') ||
-            (pathname === '/new-arrivals' && 'new-arrivals') ||
+          `/products/${
+            (pathname === '/limited-edition' && `limited-edition?perPage=3&page=${pagination}`) ||
+            (pathname === '/new-arrivals' && `new-arrivals?perPage=3&page=${pagination}`) ||
             (pathname === '/discount' && '?discount=15') ||
-            (pathname === '/popular' && 'popular')
+            (pathname === '/popular' && `popular?perPage=3&page=${pagination} `)
           }`
         )
       : useFetchApi(`/categories/${categoryId}/products?perPage=2&page=${pagination}`);
