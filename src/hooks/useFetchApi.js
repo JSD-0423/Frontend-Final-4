@@ -20,7 +20,7 @@ export const useFetchApi = (url) => {
       }
     };
 
-    // fetchData();
+    fetchData();
   }, [url]);
 
   return {
