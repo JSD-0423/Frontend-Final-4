@@ -5,11 +5,23 @@ import { Link, useLocation } from 'react-router-dom';
 import { ErrorMessage, ProductCard, Spinner } from '../../../../shared';
 
 const ProductsContainer = ({ categoryId }) => {
-  const [pagination, setPagination] = useState(1);
-  const { data, loading, error } = useFetchApi(
-    `/categories/${categoryId}/products?perPage=2&page=${pagination}`
-  );
   const { pathname } = useLocation();
+  const [pagination, setPagination] = useState(1);
+
+  const { data, loading, error } =
+    pathname === '/limited-edition' ||
+    pathname === '/new-arrivals' ||
+    pathname === '/discount' ||
+    pathname === '/popular'
+      ? useFetchApi(
+          `/products?perPage=2&page=${pagination}/${
+            (pathname === '/limited-edition' && 'limited-edition') ||
+            (pathname === '/new-arrivals' && 'new-arrivals') ||
+            (pathname === '/discount' && '?discount=15') ||
+            (pathname === '/popular' && 'popular')
+          }`
+        )
+      : useFetchApi(`/categories/${categoryId}/products?perPage=2&page=${pagination}`);
 
   if (!loading && data?.data?.length === 0)
     return (
