@@ -8,6 +8,7 @@ import NotFounPage from './pages/NotFoundPage/NotFounPage';
 import { Navbar } from './shared';
 import Footer from './shared/components/Footer';
 import CollectionsPage from './pages/CollectionsPage/CollectionsPage';
+import ProductDetailsPage from './pages/ProductDetailsPage/ProductDetailsPage';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/:categoryName" element={<CollectionsPage />} />
+          <Route path="/products/:categoryName/:id" element={<ProductDetailsPage />} />
           <Route path="*" element={<NotFounPage />} />
         </Routes>
         <Footer />

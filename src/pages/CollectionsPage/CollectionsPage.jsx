@@ -9,12 +9,11 @@ import { useFetchApi } from '../../hooks/useFetchApi';
 const CollectionsPage = () => {
   const { search } = useLocation();
   const categoryId = search.slice(search.lastIndexOf('=') + 1);
-   const { data, loading, error } = useFetchApi(`/categories/${categoryId}`);
-   console.log(data)
+  const { data, loading, error } = useFetchApi(`/categories/${categoryId}`);
 
   return (
     <div>
-      <ImageBanner imgSrc={data?.image}/>
+      <ImageBanner imgSrc={data?.image} />
       <CustomBreadcrumbs />
       <ProductsContainer categoryId={categoryId} />
     </div>

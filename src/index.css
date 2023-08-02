@@ -8,3 +8,11 @@
 a {
   text-decoration: none;
 }
+
+span.MuiTabs-indicator.css-15eor1k-MuiTabs-indicator {
+  display: none;
+}
+
+.MuiTabs-root.css-1ujnqem-MuiTabs-root {
+  min-height: fit-content !important;
+}

@@ -1,8 +1,8 @@
 import { Grid, Toolbar, Pagination, Typography } from '@mui/material';
-import { ErrorMessage, ProductCard, Spinner } from '../../../../shared';
 import { useState } from 'react';
 import { useFetchApi } from '../../../../hooks/useFetchApi';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import { ErrorMessage, ProductCard, Spinner } from '../../../../shared';
 
 const ProductsContainer = ({ categoryId }) => {
   const { pathname } = useLocation();
@@ -52,14 +52,16 @@ const ProductsContainer = ({ categoryId }) => {
               xl={2.4}
               alignItems={'center'}
               display={'flex'}>
-              <ProductCard
-                productId={product.id}
-                productName={product.name}
-                productPrice={product.price}
-                productSpecifications={'Blossom Pouch'}
-                rating={product.rating}
-                productImage={product.images[0].image}
-              />
+              <Link to={`/products/${pathname.slice(1)}/${product.id}`}>
+                <ProductCard
+                  productId={product.id}
+                  productName={product.name}
+                  productPrice={product.price}
+                  productSpecifications={'Blossom Pouch'}
+                  rating={product.rating}
+                  productImage={product.images[0].image}
+                />
+              </Link>
             </Grid>
           ))}
         </Grid>
