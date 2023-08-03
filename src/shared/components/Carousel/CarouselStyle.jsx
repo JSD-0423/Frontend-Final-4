@@ -3,9 +3,10 @@ import React from 'react';
 import { styled } from '@mui/system';
 
 export const CarouselBox = styled(ImageList)(({ theme }) => ({
-  overflow: 'scroll',
+  // overflow: 'auto',
   height: '400px',
-  margin: '0px  20px  0px 20px '
+  margin: '0px  20px  0px 20px ',
+  overflowX: 'auto'
 
   //   width: '100%'
 }));
