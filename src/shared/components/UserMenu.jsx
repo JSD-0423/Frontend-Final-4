@@ -27,13 +27,17 @@ const UserMenu = ({ handleProfileMenuOpen, handleMenuClose, anchorEl }) => {
     <>
       <Box sx={{ display: { xs: 'none', sm: 'flex' } }}>
         <IconButton size="medium" color="inherit">
-          <FavoriteBorder />
+          <a href="/" style={{color:'inherit',textDecoration:'inherit'}}>
+            <FavoriteBorder />
+          </a>
         </IconButton>
         <IconButton size="medium" onClick={handleProfileMenuOpen} color="inherit">
-          <PermIdentity />
+            <PermIdentity />
         </IconButton>
         <IconButton edge="end" size="medium" color="inherit">
-          <WorkOutline />
+          <a href="/mycart" style={{color:'inherit',textDecoration:'inherit'}}>
+            <WorkOutline />
+          </a>
         </IconButton>
       </Box>
       {renderMenu}
