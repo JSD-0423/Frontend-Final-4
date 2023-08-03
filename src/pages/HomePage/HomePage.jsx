@@ -38,11 +38,18 @@ const handpickedCollection = [
 
 function HomePage() {
   const { data: brands, loading, error } = useFetchApi(`/brands`);
+  const { data: newArrivalData } = useFetchApi(`/products/new-arrivals`, {
+    params: {
+      perPage: 100
+    }
+  });
+
+  console.log('newArrivalData', newArrivalData?.data);
 
   return (
     <div>
       <CustomCarousel />
-      <NewArrivals />
+      <NewArrivals path={'/new-arrivals'} data={newArrivalData?.data} />
       <ImageListBanner
         images={handpickedCollection}
         cols={4}
