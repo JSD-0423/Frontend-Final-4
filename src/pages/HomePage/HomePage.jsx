@@ -4,12 +4,6 @@ import handbags from '../../assets/images/handbags.png';
 import wristwatches from '../../assets/images/wristwatches.png';
 import sunGlasses from '../../assets/images/sunGlasses.png';
 import ImageListBanner from '../../shared/components/ImageListBanner';
-import BIBA from '../../assets/images/BIBA.png';
-import Chanel from '../../assets/images/Chanel_logo.png';
-import DolceGabbana from '../../assets/images/Dolce_&_Gabbana.png';
-import HM from '../../assets/images/H&M-Logo.png';
-import zara from '../../assets/images/Zara.png';
-import Prada from '../../assets/images/Prada.png';
 import NewArrivals from '../../shared/components/NewArrivals/NewArrivals';
 import { CustomCarousel } from '../../shared';
 import { theme } from '../../Theme/index';
@@ -37,7 +31,7 @@ const handpickedCollection = [
 ];
 
 function HomePage() {
-  const { data: brands, loading, error } = useFetchApi(`/brands`);
+  const { data: brands } = useFetchApi(`/brands`);
   const { data: newArrivalData } = useFetchApi(`/products/new-arrivals`, {
     params: {
       perPage: 100
@@ -64,7 +58,7 @@ function HomePage() {
         cols={6}
         headerColor={theme.palette.primary.black}
         headerText={'Shop by Brands'}
-        gap={50}
+        gap={0}
         paddingTop={'60px'}
       />
       <SpecialProductBanner imgUrl={'../assets/images/BackGround.png'} path={'/limited-edition'} />

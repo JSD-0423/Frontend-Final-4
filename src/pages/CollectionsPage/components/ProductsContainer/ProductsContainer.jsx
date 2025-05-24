@@ -59,7 +59,7 @@ const ProductsContainer = ({ categoryId }) => {
                   productPrice={product.price}
                   productSpecifications={'Blossom Pouch'}
                   rating={product.rating}
-                  productImage={product.images[0].image}
+                  productImage={undefined}
                 />
               </Link>
             </Grid>

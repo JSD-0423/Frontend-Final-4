@@ -54,15 +54,9 @@ function Navbar() {
       <AppBar
         position="static"
         sx={{ bgcolor: 'var(--bg-white)', color: 'black', boxShadow: 'none' }}>
-        <Toolbar>
+        <Toolbar style={{ display: 'flex', alignItems: 'center' }}>
           <Link to="/">
-            <Logo
-              variant="h6"
-              sx={{
-                display: { xs: 'none', md: 'flex' }
-              }}>
-              CORA'L
-            </Logo>
+            <img src="../../assets/images/logo.png" alt="Logo" />
           </Link>
 
           <NavMenu
@@ -70,8 +64,6 @@ function Navbar() {
             handleCloseNavMenu={handleCloseNavMenu}
             anchorElNav={anchorElNav}
           />
-
-          <Box sx={{ flexGrow: 1 }} />
 
           <SearchBar />
 

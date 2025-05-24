@@ -10,6 +10,9 @@ import Footer from './shared/components/Footer';
 import CollectionsPage from './pages/CollectionsPage/CollectionsPage';
 import ProductDetailsPage from './pages/ProductDetailsPage/ProductDetailsPage';
 import MyCart from './shared/components/MyCart';
+import SignIn from './pages/Auth/SignIn/SignIn';
+import SignUp from './pages/Auth/SignUp/SignUp';
+import FavoritesPage from './pages/FavoritesPage/FavoritesPage';
 
 function App() {
   return (
@@ -21,6 +24,9 @@ function App() {
           <Route path="/:categoryName" element={<CollectionsPage />} />
           <Route path="/products/:categoryName/:id" element={<ProductDetailsPage />} />
           <Route path="/mycart" element={<MyCart />} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/favorites" element={<FavoritesPage />} />
           <Route path="*" element={<NotFounPage />} />
         </Routes>
         <Footer />

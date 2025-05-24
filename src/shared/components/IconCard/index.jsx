@@ -1,14 +1,12 @@
-import { IConCardImageContainer, IconCardContainer } from "./style";
+import { IConCardImageContainer, IconCardContainer } from './style';
 
-function IconCard({ iconUrl,backgroundColor }) {
+function IconCard({ iconUrl, backgroundColor }) {
   return (
     <IconCardContainer backgroundColor={backgroundColor}>
-        <IConCardImageContainer>
-        <img src={iconUrl}/>
-        </IConCardImageContainer>
-   
+      <IConCardImageContainer>
+        <img src={iconUrl} />
+      </IConCardImageContainer>
     </IconCardContainer>
-   
   );
 }
 

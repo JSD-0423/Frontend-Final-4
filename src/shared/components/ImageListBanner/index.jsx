@@ -37,9 +37,7 @@ function ImageListBanner({
             })}
           {icons &&
             icons.map((item) => {
-              return (
-                <IconCard iconUrl={item.imageurl} backgroundColor={theme.palette.primary.grey} />
-              );
+              return <IconCard iconUrl={item.image} backgroundColor={theme.palette.primary.grey} />;
             })}
         </ImageListStyle>
       </HandpickedCollectionsContainer>

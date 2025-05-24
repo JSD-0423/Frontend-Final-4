@@ -40,10 +40,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create('width'),
-    width: '100%',
-    [theme.breakpoints.up('md')]: {
-      width: '20ch'
-    }
+    width: '100%'
   }
 }));
 
@@ -53,7 +50,10 @@ const SearchBar = () => {
       <SearchIconWrapper>
         <SearchIcon />
       </SearchIconWrapper>
-      <StyledInputBase placeholder="Search…" inputProps={{ 'aria-label': 'search' }} />
+      <StyledInputBase
+        placeholder="Search for products or brands..."
+        inputProps={{ 'aria-label': 'search' }}
+      />
     </Search>
   );
 };

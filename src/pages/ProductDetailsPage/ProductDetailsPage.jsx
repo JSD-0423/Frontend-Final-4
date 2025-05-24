@@ -25,6 +25,7 @@ const ProductDetailsPage = () => {
               rating={data.rating}
               description={data.description}
               price={data.price}
+              productId={data.id}
             />
           </Toolbar>
           <Toolbar>
